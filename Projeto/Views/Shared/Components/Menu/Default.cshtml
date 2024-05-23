@@ -1,0 +1,103 @@
+﻿@model UsuarioModel
+
+
+<!--Css-->
+<link rel="stylesheet" href="/css/style.css" asp-append-version="true" />
+<!-- Boostrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<a class="navbar-brand" href="https://github.com/piterkubo" target="_blank"><img src="/lib/logo.png"></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        
+        <li class ="nav-item">
+            <a class="nav-link"><i class="bi bi-award-fill"></i>Olá, @Model.Nome</a>
+            
+        </li>
+        
+
+
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"> <i class="bi bi-house-fill"></i>Pagina Inicial</a>
+            
+        </li>
+      
+             
+
+        @if (Model.Perfil == Projeto.Enums.PerfilEnum.Admin)
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="UsuarioAdm" asp-action="Index"><i class="bi bi-cpu"></i>Adm</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="AlterarSenhaUsuarioAdm" asp-action="Index"><i class="bi bi-key-fill"></i>Senha</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Index"><i class="bi bi-person-circle"></i>User PF</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="UsuarioPJ" asp-action="Index"><i class="bi bi-building"></i>User PJ</a>
+            </li>
+            
+
+
+        
+        }
+
+
+
+        @if(Model.Perfil == Projeto.Enums.PerfilEnum.Empresa)
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="AlterarDadosUsuarioPJ" asp-action="Index"><i class="bi bi-person-lines-fill"></i>Perfil</a>
+            </li>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="AlterarSenhaUsuarioPJ" asp-action="Index"><i class="bi bi-key-fill"></i>Senha</a>
+            </li>
+
+        }
+
+
+
+
+        @if(Model.Perfil == Projeto.Enums.PerfilEnum.Usuario)
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="AlterarDadosUsuario" asp-action="Index"><i class="bi bi-person-lines-fill"></i>Perfil</a>
+            </li>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="AlterarSenhaUsuario" asp-action="Index" ><i class="bi bi-key-fill"></i>Senha</a>
+            </li>
+
+
+        }
+                         
+
+
+
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Sair"><i class="bi bi-door-open-fill"></i>Sair</a>
+        </li>
+
+
+    </ul>
+</div>
+

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+
+<!-- css -->
+<link rel="stylesheet" href="~/css/style.css">
+<link rel="stylesheet" href="~/css/site.css">
+
+
+<br />
+
+<div class ="container col-11 col-md-9" id="form-container">
+    <h4 style="font-style:italic; text-align:center">Bem Vindo!</h4>          
+    <div class="row align-items-center justify-content-center ">
+        <div class="col-md-6 order-md-2 ">
+            <img src="~/lib/logoHome.jpeg" class="img-fluid" style="display:flex;text-align:center;margin-top: 50px;"
+                 alt="Logar no sistema">
+
+        </div>
+    </div>
+    
+    
+</div>
+
+
+

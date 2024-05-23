@@ -1,0 +1,150 @@
+﻿@using Projeto.Enums
+@model UsuarioAdmModel
+
+
+<!-- JavaScript -->
+<script src="/js/maskcnpj_cpf.js" defer></script>
+<script src="/js/RetiraMascaraCpfCnpj.js" defer></script>
+
+
+<!-- css -->
+<link rel="stylesheet" href="/css/style.css">
+
+
+@{
+    ViewData["Title"] = "Criar Usuario Adm";
+
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+
+
+
+<body>
+
+    <br />
+
+    <div class="text-center">
+        @if (TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemSucesso"]
+            </div>
+        }
+
+
+        @if (TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemErro"]
+            </div>
+        }
+
+    </div>
+
+    <br />
+
+    <div class="container col-11 col-md-9" id="form-container">
+        <div class="row align-items-center gx-5">
+            <div class="col-md-6 order-md-2">
+                <h2>Criar Usuario Administrador </h2>
+
+
+                <form asp-controller="UsuarioAdm" asp-action="Criar" method="post">
+
+
+                    <div class="form-floating mb-3">
+
+                        <select asp-for="Status" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="@StatusEnums.Ativo">Ativo</option>
+                            <option value="@StatusEnums.Inativo">Inativo</option>
+                        </select>
+                        <label for="status" class="form-label">Status</label>
+                        @Html.ValidationMessageFor(x => x.Perfil)
+
+                    </div>
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do usuario">
+                        <label for="nome" class="form-label">Nome</label>
+                        @Html.ValidationMessageFor(x => x.Nome)
+
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="SobreNome" class="form-control" placeholder="Digite o Sobrenome do usuario">
+                        <label for="Sobrenome" class="form-label">SobreNome</label>
+                        @Html.ValidationMessageFor(x => x.SobreNome)
+
+                    </div>
+
+
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Login" type="text" class="form-control" id="cpf_cnpj"
+                               placeholder="000.000.000-00" onkeypress='mascaraMutuario(this,cpfCnpj)' onblur="removePontos(this)" maxlength="14">
+                        <label for="login" class="form-label">CPF p/ Login</label>
+                        @Html.ValidationMessageFor(x => x.Login)
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+
+                        <select asp-for="Perfil" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="@PerfilEnum.Admin">Administrador</option>
+                        </select>
+                        <label for="status" class="form-label">Perfil</label>
+                        @Html.ValidationMessageFor(x => x.Perfil)
+
+                    </div>
+
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o e-mail usuario">
+                        <label for="email" class="form-label">E-mail</label>
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="ConfirmEmail" class="form-control" placeholder="Confirme o e-mail">
+                        <label for="ConfirmeEmail" class="form-label">Confirme o E-mail</label>
+                        @Html.ValidationMessageFor(x => x.ConfirmEmail)
+                    </div>
+
+
+                                       
+
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <a class="btn btn-secondary" asp-controller="UsuarioAdm" asp-action="Index" role="button">Voltar</a>
+                    </div>                    
+
+                </form>
+
+
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <div class="col-12">
+                    <img src="/lib/hello.svg" alt="Logar no sistema " class="img-fluid">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>

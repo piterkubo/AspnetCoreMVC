@@ -1,0 +1,181 @@
+﻿@using Projeto.Enums;
+@model UsuarioModel
+
+
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+
+<body>
+    <div class="container col-11 col-md-9" id="form-container">
+        <div class="row align-items-center gx-5">
+            <div class="col-md-6 order-md-2">
+                <h2>Editar Usuario</h2>
+                <form asp-controller="Usuario" asp-action="Editar" method="post">
+
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-floating mb-3">
+
+                        <select asp-for="Status" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="@StatusEnums.Ativo">Ativo</option>
+                            <option value="@StatusEnums.Inativo">Inativo</option>
+                        </select>
+                        <label for="celular" class="form-label">Status</label>
+                        @Html.ValidationMessageFor(x => x.Perfil)
+
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do usuario">
+                        <label for="nome" class="form-label">Nome</label>
+                        @Html.ValidationMessageFor(x => x.Nome)
+
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="SobreNome" class="form-control" placeholder="Digite o Sobrenome do usuario">
+                        <label for="Sobrenome" class="form-label">SobreNome</label>
+                        @Html.ValidationMessageFor(x => x.SobreNome)
+
+                    </div>
+
+
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Login" type="text" class="form-control" id="cpf_cnpj"
+                               placeholder="000.000.000-00" onkeypress='mascaraMutuario(this,cpfCnpj)' maxlength="14">
+                        <label for="login" class="form-label">CPF p/ Login</label>
+                        @Html.ValidationMessageFor(x => x.Login)
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+
+                        <select asp-for="Perfil" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="@PerfilEnum.Usuario">Usuario</option>
+                        </select>
+                        <label for="celular" class="form-label">Perfil</label>
+                        @Html.ValidationMessageFor(x => x.Perfil)
+
+                    </div>
+
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o e-mail usuario">
+                        <label for="email" class="form-label">E-mail</label>
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="ConfirmEmail" class="form-control" placeholder="Confirme o e-mail">
+                        <label for="ConfirmeEmail" class="form-label">Confirme o E-mail</label>
+                        @Html.ValidationMessageFor(x => x.ConfirmEmail)
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
+                    </div>
+                   
+
+
+                    <h2>Termos de responsabilidade (Marcação obrigatória):</h2>
+
+
+                    <div class="mb-3">
+
+                        <div class="form-check mb-2 ">
+
+
+                            <input asp-for="AutorizacaoLGPD" type="checkbox" class="form-check-input" id="check_lgpd" checked>
+                            <label for="check_lgpd" class="form-check-label">
+                                Autorizações Legais e LGPD
+
+                            </label>
+
+
+
+                            <i class="bi bi-info-circle icons-reg" data-bs-toggle="modal" data-bs-target="#modal"></i>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Autorizações legais e LGPD</h5>
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            <p class="p_modal">
+                                                Responsabilizo-me pela exatidão das informações prestadas à vista dos documentos anexados,
+                                                e outros comprobatórios dos demais elementos de informações apresentadas, sob pena de aplicação do disposto
+                                                no artigo 64 da Lei 8.383, de 30/12/91.
+                                            </p>
+
+                                            <h5 class="modal-title">Como se caracteriza U.S. Person?</h5>
+
+                                            <p class="p_modal_2">
+                                                Caso se faça necessária a apresentação de documentação adicional, através de exigência dos órgãos públicos fiscalizadores
+                                                e reguladores, obrigo-me a apresentá-los dentro do prazo solicitado. Declaro também ter pleno conhecimento da
+
+                                                <a class="link_registro_lgpd" href="https://guitta.com.br/prevencao-a-lavagem-de-dinheiro-pldft" target="_blank" rel="noopener noreferrer">
+                                                    “Política de Prevenção à Lavagem de Dinheiro e ao Financiamento ao Terrorismo”
+
+                                                </a>
+
+                                                bem como dos procedimentos relativos ao combate à lavagem de Dinheiro e financiamento ao terrorismo adotados pela
+                                                Guitta Corretora de Câmbio LTDA.
+
+                                                Em conformidade com a Lei Federal nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), Lei Federal nº 12.965/2014
+                                                (Marco Civil da Internet) e Lei Federal nº 8.078/1990 (Código de Defesa do Consumidor) comunicamos que seus dados serão
+                                                armazenados para cumprimento do contrato de prestação de serviço de câmbio e serviços relacionados. Informamos também que
+                                                os dados são compartilhados com terceiros (empresas de gestão e tecnologia que cuidam de nossos sistemas e bancos parceiros
+                                                responsáveis pelos pagamentos e recebimentos internacionais). Seus dados poderão ficar armazenados por até 20 anos a contar
+                                                da data da última operação realizada conosco devido a obrigações junto ao Banco Central e Receita Federal do Brasil. No caso
+                                                de cadastro de menores de idade, estes deverão ser realizados pelo responsável legal. Para maiores informações de privacidade
+                                                acesse nossa
+
+                                                <a class="link_registro_lgpd" href="https://guitta.com.br/politica-de-seguranca-cibernetica" target="_blank" rel="noopener noreferrer">
+                                                    Política de Privacidade.
+                                                </a>
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                             
+                </form>
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <div class="col-12">
+                    <img src="/lib/hello.svg" alt="Logar no sistema " class="img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

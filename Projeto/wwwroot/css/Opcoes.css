@@ -1,0 +1,27 @@
+﻿/* Ajuste do body inicio opções */
+
+#form-container .right-position, .left-position {
+    text-align: center;
+    border: #CCC 1px solid;
+    border-radius: 10px;
+    border-style: dashed;
+}
+
+
+#form-container .opcao_menu_inicio h3 {
+    color: #1c3f76;
+}
+
+
+#form-container .opcao_menu_inicio i {
+    color: #1c3f76;
+}
+
+
+#form-container .opcao_menu_inicio:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}

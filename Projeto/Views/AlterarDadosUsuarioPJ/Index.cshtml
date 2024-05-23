@@ -1,0 +1,96 @@
+﻿@model AlterarDadosUsuarioPJModel
+@{
+    ViewData["Title"] = "Alterar perfil do usuário";
+}
+
+<!-- css -->
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<br />
+
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<br />
+
+<body>
+    <div class="container col-11 col-md-9" id="form-container">
+        <div class="row align-items-center gx-5">
+            <div class="col-md-6 order-md-2">
+                <h2>Alterar Dados</h2>
+                <form asp-controller="AlterarDadosUsuarioPJ" asp-action="Alterar" method="post">
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do usuário" value="@Model.Nome">
+                        <label for="Nome" class="form-label">Nome</label>
+                        @Html.ValidationMessageFor(x => x.Nome)
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="SobreNome" class="form-control" placeholder="Digite o sobrenome do usuário" value="@Model.SobreNome">
+                        <label for="SobreNome" class="form-label">Sobrenome</label>
+                        @Html.ValidationMessageFor(x => x.SobreNome)
+                    </div>
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="RazaoSocial" class="form-control" placeholder="Digite Razão Social" value="@Model.RazaoSocial">
+                        <label for="Razao" class="form-label">Razão Social</label>
+                        @Html.ValidationMessageFor(x => x.RazaoSocial)
+                    </div>
+
+
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="Email" class="form-control" placeholder="Digite email do usuário" value="@Model.Email">
+                        <label for="Email" class="form-label">Email</label>
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+
+                  
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" asp-for="ConfirmEmail" class="form-control" placeholder="Digite confirme o email  do usuário" value="@Model.ConfirmEmail">
+                        <label for="ConfirmEmail" class="form-label">Confirme o Email</label>
+                        @Html.ValidationMessageFor(x => x.ConfirmEmail)
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+                    <a class="btn btn-secondary btn-block" asp-action="Index" asp-controller="Home" role="button">Voltar</a>
+
+                </form>
+
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <div class="col-8">
+                    <img src="/lib/Edit_profile.svg" alt="Logar no sistema " class="img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

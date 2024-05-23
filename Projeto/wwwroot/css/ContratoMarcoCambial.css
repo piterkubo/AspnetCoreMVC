@@ -1,0 +1,24 @@
+﻿
+/* Ajustes Contrato Marco Cambial */
+
+#form-container .logo-marco-cambial {
+    display: flex;
+    justify-content: center;
+}
+
+
+#form-container .pf_slogan_contrato {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+
+#form-container .termo_pf_contrato h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 30px;
+}

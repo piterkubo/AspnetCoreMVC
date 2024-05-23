@@ -1,0 +1,92 @@
+﻿
+/* Ajustando a 02 - tela de registros */
+
+.icons-reg {
+    margin-left: 10px;
+    color: #0d6efd;
+}
+
+
+
+.modal-title {
+    color: #000000;
+}
+
+
+.p_modal {
+    color: #363636;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+
+.p_modal_2 {
+    color: #363636;
+    background-color: #F0F8FF;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+
+.p_registro_lgpd {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+#form-container .link-registrar {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+.img-cad-sucess {
+    width: 20%;
+    height: 10%;
+    position: relative;
+    right: 13%;
+}
+
+
+.img-email-sucess {
+    width: 200px;
+}
+
+
+#form-container .btn-sair-email {
+    color: #fff;
+}
+
+    #form-container .btn-sair-email:hover {
+        color: #CCC;
+    }
+
+
+/* tela registro modal salvo */
+@media(min-width:320px) {
+    .img-cad-sucess {
+        width: 20%;
+        height: 10%;
+        position: relative;
+        left: 40%;
+    }
+
+    .img-email-sucess {
+        width: 200px;
+        margin-top: 50px;
+    }
+
+    #link-container {
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+
+
+#link-containter .modal-body {
+    font-size: 15px;
+}
