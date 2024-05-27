@@ -1,6 +1,6 @@
-- O projeto foi realizado com arquitetura MVC (Model/View/Controller).
+ - O projeto foi realizado com arquitetura MVC (Model/View/Controller).
  - Neste projeto é possivel fazer o crud de login de usuarios e um gerenciamento de um Administrador.
- - Gostaria de destacar um ponto importante nesse projeto. Criei uma solução que clicando em (É Cliente, mas não tem acesso) faz uma consulta de clientes por CPF/CNPJ
- - e email em um outro banco de dados. Se o CPF/CNPJ + email estiver cadastrado no banco. Tenho um metodo pega algumas informações e salva no banco de dados de login. - 
- - O cliente receberá um e-mail com uma senha criptografada provisoria que apos se autenticar, o usuario pode mudar a senha.
- - A medida foi realizada, pois o projeto de login estava apto apenas para novos clientes e tinhamos que facilitar o processo de cadastro com os clientes que já fazem operações.
+ - Gostaria de destacar um ponto importante nesse projeto. Criei uma solução que clicando em (É Cliente, mas não tem acesso) faz uma consulta de clientes por CPF/CNPJ e email em um    outro banco de dados.outro banco de dados.
+ - Se o CPF/CNPJ + email estiver cadastrado no banco. Tenho um metodo que ira pega algumas informações e salva em um outro banco de dados. 
+ - O cliente receberá um e-mail com uma senha criptografada provisória e apos se autenticar, o usuario terá mudar a senha.
+ - A medida foi realizada, pois o projeto de login estava apto apenas para futuros clientes. Os clientes que já tinham vinculo conosco, precisava de uma praticidade de se autenticar em nosso sistema. 
