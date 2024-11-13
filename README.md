@@ -1,6 +1,5 @@
- - O projeto foi realizado com arquitetura MVC (Model/View/Controller).
- - Neste projeto é possivel fazer o crud de login de usuarios e um gerenciamento de um Administrador.
- - Gostaria de destacar um ponto importante nesse projeto. Criei uma solução que clicando em (É Cliente, mas não tem acesso) faz uma consulta de clientes por CPF/CNPJ e email em um    outro banco de dados.outro banco de dados.
- - Se o CPF/CNPJ + email estiver cadastrado no banco. Tenho um metodo que ira pega algumas informações e salva em um outro banco de dados. 
- - O cliente receberá um e-mail com uma senha criptografada provisória e apos se autenticar, o usuario terá mudar a senha.
- - A medida foi realizada, pois o projeto de login estava apto apenas para futuros clientes. Os clientes que já tinham vinculo conosco, precisava de uma praticidade de se autenticar em nosso sistema. 
+Esse projeto foi desenvolvido com a arquitetura MVC (Model/View/Controller). Ele permite fazer o CRUD de usuários para login, além de contar com uma área de gerenciamento para o administrador.
+
+Uma das funcionalidades mais interessantes que implementei foi uma solução para facilitar o acesso de clientes já cadastrados. Ao clicar em "É Cliente, mas não tem acesso", o sistema consulta o CPF/CNPJ e o e-mail do cliente em outro banco de dados. Caso os dados estejam cadastrados, um método coleta algumas informações e as salva no banco de dados principal.
+
+Depois, o cliente recebe um e-mail com uma senha provisória criptografada. Ao fazer o primeiro login, ele precisará alterar essa senha. Essa medida foi necessária porque o sistema de login estava inicialmente preparado apenas para novos clientes, mas queríamos facilitar o acesso para os clientes que já tinham um vínculo com a empresa.
